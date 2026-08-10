@@ -1,12 +1,12 @@
 ---
 name: roadmap
-description: "Break a whole project (PRD or description) into an ordered list of shippable features — creates .sdlc/ROADMAP.md. Optional: for greenfield projects or large multi-feature efforts. USE WHEN: 'divide this project', 'break down this PRD', 'create a development plan'. NOT for a single feature — use /spec directly."
+description: "Break a whole project (PRD or description) into an ordered list of shippable features — creates .sdlc/ROADMAP.md. Optional: for greenfield projects or large multi-feature efforts. USE WHEN: 'divide this project', 'break down this PRD', 'create a development plan'. NOT for a single feature or bug — use /plan directly."
 argument-hint: "The PRD, project description, or doc path to break down"
 ---
 
 # roadmap
 
-Turns a PRD into an ordered feature list where each feature fits one `/spec → /build → /qa → /ship` cycle. It decides WHAT to build and in what order — never HOW (no file lists, no schemas; that is /spec's job).
+Turns a PRD into an ordered feature list where each feature fits one `/plan → /spec → /test → /build → /qa` cycle. It decides WHAT to build and in what order — never HOW (no file lists, no schemas; that is /plan and /spec's job).
 
 ## Procedure
 
@@ -44,10 +44,10 @@ Done when: <2–3 verifiable criteria — "returns 401 unauthenticated", not "wo
 - <anything deliberately dropped, one line each>
 ```
 
-**6. Report in ≤ 6 lines:** feature count, phase summary, and the next command: `/spec <feature-1>` — or `/automate <feature-1>` to run its whole cycle hands-free.
+**6. Report in ≤ 6 lines:** feature count, phase summary, and the next command: `/plan <feature-1>` to design it together — or `/automate <feature-1>` to run its whole cycle hands-free.
 
 ## Rules
 - Cover the ENTIRE PRD scope — anything skipped goes under "Out of v1", never silently dropped.
-- Feature names are kebab-case; they become spec filenames (`.sdlc/specs/<feature>.md`).
+- Feature names are kebab-case; they become spec folder names (`.sdlc/specs/<feature>/`).
 - The Status column is owned by /ship — it flips `todo → done` as features ship. Don't pre-fill anything else.
 - "Done when" criteria flow into the spec's Acceptance checks — write them so a command can prove them.
